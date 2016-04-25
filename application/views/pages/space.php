@@ -1,43 +1,4 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Space</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet"> -->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  <div class="main-wrpr"> 
-    <header>
-      <div class="conatiner-fluid">
-        <div class="logo-wrpr">
-          <a href="#"><img src="img/logo.png" class="img-responsive center-block"></a>
-        </div>
-        <nav class="main-menu">
-          <ul class="list-inline text-center">
-            <li><a href="#" id="startQuiz">start quiz</a></li>
-            <li class="menu-active"><a href="#" id="exploreColor">Explore colours </a></li>
-            <li><a href="#" id="designSpace">design your space</a></li>
-          </ul>
-          <a href="#" class="cart-icon"><img src="img/cart-icon.png"></a>
-        </nav>
-      </div>
-    </header>
-    <div class="info-header">
+<div class="info-header">
         <div class="info-title">Every colour has a personality that makes it unique, Now it’s time to <span>#ColourYourImagination!</span></div>
         <div class="info-dcrb">Take The SPACES Personality Quiz now! If the colour of your personality matches the Colour of the Day, great discounts are coming your way!
         </div>
@@ -45,7 +6,7 @@
     <section class="gsap-demo clearfix">          
       <ul class="diamond-grid">    
         <li>
-          <div class="diamond" style="background-color: #0d71aa;">
+          <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;background-color: rgba(13, 113, 170,0.7);">
             <div class="content">
               Blue
             </div>
@@ -58,17 +19,18 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Blue</span></div>
+              <div class="popup-close">&times;</div>
             </div>
           </div>
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #e92d3f;">
+          <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;background-color: rgba(233, 45, 63,0.7);">
             <div class="content">
               Blood red
             </div>
@@ -81,8 +43,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Blood red</span></div>
@@ -91,7 +53,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #2da880;">
+          <div class="diamond" data-color="#2da880" style="background-color: #2da880;background-color: rgba(45, 168, 128,0.7);">
             <div class="content">
               dark green
             </div>
@@ -104,8 +66,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Dark green</span></div>
@@ -114,7 +76,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #bd865f;">
+          <div class="diamond" data-color="#bd865f" style="background-color: #bd865f;background-color: rgba(189, 134, 95,0.7);">
             <div class="content">
               brown
             </div>
@@ -127,8 +89,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Brown</span></div>
@@ -137,7 +99,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #654d46;">
+          <div class="diamond" data-color="#654d46" style="background-color: #654d46;background-color: rgba(101, 77, 70,0.7);">
             <div class="content">
               Chocolate
             </div>
@@ -150,8 +112,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Chocolate</span></div>
@@ -160,7 +122,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #eb66af;">
+          <div class="diamond" data-color="#eb66af" style="background-color: #eb66af;background-color: rgba(235, 102, 175,0.7);">
             <div class="content">
               Deep Pink
             </div>
@@ -173,8 +135,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Deep Pink</span></div>
@@ -183,7 +145,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #ba9d3a;">
+          <div class="diamond" data-color="#ba9d3a" style="background-color: #ba9d3a;background-color: rgba(186, 157, 58,0.7);">
             <div class="content">
               gold
             </div>
@@ -196,8 +158,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Gold</span></div>
@@ -206,7 +168,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #f1e5ac;">
+          <div class="diamond" data-color="#f1e5ac" style="background-color: #f1e5ac;background-color: rgba(241, 229, 172,0.7);">
             <div class="content">
               Beige
             </div>
@@ -219,8 +181,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Beige</span></div>
@@ -229,7 +191,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li style="opacity: 0;">
-          <div class="diamond" >
+          <div class="diamond" data-color="#e5e5c4" style="background-color: #e5e5c4;background-color: rgba(14, 207, 207,0.7);">
             <div class="content">
                Sky blue
             </div>
@@ -242,8 +204,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Sky blue</span></div>
@@ -252,7 +214,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #e5e5c4;">
+          <div class="diamond" data-color="#e5e5c4" style="background-color: #e5e5c4;background-color: rgba(229, 229, 196,0.7);">
             <div class="content">
               ivory
             </div>
@@ -265,8 +227,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Ivory</span></div>
@@ -275,7 +237,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #35d7c7;">
+          <div class="diamond" data-color="#35d7c7" style="background-color: #35d7c7;background-color: rgba(53, 215, 199,0.7);">
             <div class="content">
               Turquoise
             </div>
@@ -288,8 +250,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Turquoise</span></div>
@@ -298,7 +260,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #c7da1a;">
+          <div class="diamond" data-color="#c7da1a" style="background-color: #c7da1a;background-color: rgba(199, 218, 26,0.7);">
             <div class="content">
               Lime Yellow
             </div>
@@ -311,8 +273,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Lime Yellow</span></div>
@@ -321,7 +283,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #990249;">
+          <div class="diamond" data-color="#990249" style="background-color: #990249;background-color: rgba(153, 2, 73,0.7);">
             <div class="content">
               magenta
             </div>
@@ -334,8 +296,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Magenta</span></div>
@@ -344,7 +306,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #600402;">
+          <div class="diamond" data-color="#600402" style="background-color: #600402;background-color: rgba(96, 4, 2,0.7);">
             <div class="content">
               maroon
             </div>
@@ -357,8 +319,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Maroon</span></div>
@@ -367,7 +329,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #002569;">
+          <div class="diamond" data-color="#002569" style="background-color: #002569;background-color: rgba(0, 37, 105,0.7);">
             <div class="content">
               Navy Blue
             </div>
@@ -380,8 +342,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Navy Blue</span></div>
@@ -390,7 +352,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #ff5e00;">
+          <div class="diamond" data-color="#ff5e00" style="background-color: #ff5e00;background-color: rgba(255, 94, 0,0.7);">
             <div class="content">
               orange
             </div>
@@ -403,8 +365,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Orange</span></div>
@@ -413,7 +375,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #fbae92;">
+          <div class="diamond" data-color="#fbae92" style="background-color: #fbae92;background-color: rgba(251, 174, 146,0.7);">
             <div class="content">
               peach
             </div>
@@ -426,8 +388,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Peach</span></div>
@@ -436,7 +398,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li style="opacity: 1;">
-          <div class="diamond" style="background-color: #7e0b80;">
+          <div class="diamond" data-color="#7e0b80" style="background-color: #7e0b80;background-color: rgba(126, 11, 128,0.7);">
             <div class="content">
               purple
             </div>
@@ -449,8 +411,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Purple</span></div>
@@ -459,7 +421,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #a33921;">
+          <div class="diamond" data-color="#a33921" style="background-color: #a33921;background-color: rgba(163, 57, 33,0.7);">
             <div class="content">
               rust
             </div>
@@ -472,8 +434,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Rust</span></div>
@@ -482,7 +444,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #666;">
+          <div class="diamond" data-color="#6666666" style="background-color: #666666;background-color: rgba(102, 102, 102,0.7);">
             <div class="content">
               grey
             </div>
@@ -495,8 +457,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Grey</span></div>
@@ -505,7 +467,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #9357eb;">
+          <div class="diamond" data-color="#9357eb" style="background-color: #9357eb;background-color: rgba(147, 87, 235,0.7);">
             <div class="content">
               Lavender
             </div>
@@ -518,8 +480,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Lavender</span></div>
@@ -528,7 +490,7 @@
           <div class="diamond-overlay"></div>
         </li>
        <li>
-          <div class="diamond" style="background-color: #e1cbe4;">
+          <div class="diamond" data-color="#e1cbe4" style="background-color: #e1cbe4;background-color: rgba(225, 203, 228,0.7);">
             <div class="content">
               lilac
             </div>
@@ -541,8 +503,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Lilac</span></div>
@@ -551,7 +513,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #c21010;">
+          <div class="diamond" data-color="#c21010" style="background-color: #c21010;background-color: rgba(194, 16, 16,0.7);">
             <div class="content">
               red
             </div>
@@ -564,8 +526,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Red</span></div>
@@ -574,7 +536,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #b2907b;">
+          <div class="diamond" data-color="#b2907b" style="background-color: #b2907b;background-color: rgba(178, 144, 123,0.7);">
             <div class="content">
               Chestnut
             </div>
@@ -587,8 +549,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Chestnut</span></div>
@@ -597,7 +559,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #0188a5;">
+          <div class="diamond" data-color="#0188a5" style="background-color: #0188a5;background-color: rgba(1, 136, 165,0.7);">
             <div class="content">
               teal
             </div>
@@ -610,8 +572,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Teal</span></div>
@@ -620,7 +582,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #dfa700;">
+          <div class="diamond" data-color="#dfa700" style="background-color: #dfa700;background-color: rgba(223, 167, 0,0.7);">
             <div class="content">
               amber
             </div>
@@ -633,8 +595,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Amber</span></div>
@@ -643,7 +605,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #785cb4;">
+          <div class="diamond" data-color="#785cb4" style="background-color: #785cb4;background-color: rgba(120, 92, 180,0.7);">
             <div class="content">
               violet
             </div>
@@ -656,8 +618,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Violet</span></div>
@@ -666,7 +628,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #354552;">
+          <div class="diamond" data-color="#354552" style="background-color: #354552;background-color: rgba(53, 69, 82,0.7);">
             <div class="content">
               Dusk Indigo
             </div>
@@ -679,8 +641,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Dusk Indigo</span></div>
@@ -689,7 +651,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #677248;">
+          <div class="diamond" data-color="#677248" style="background-color: #677248;background-color: rgba(103, 114, 72,0.7);">
             <div class="content">
               Sage green
             </div>
@@ -702,8 +664,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Sage green</span></div>
@@ -712,7 +674,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #660820;">
+          <div class="diamond" data-color="#660820" style="background-color: #660820;background-color: rgba(102, 8, 32,0.7);">
             <div class="content">
               garnet
             </div>
@@ -725,8 +687,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Garnet</span></div>
@@ -735,7 +697,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #C4C6C6;">
+          <div class="diamond" data-color="#C4C6C6" style="background-color: #C4C6C6;background-color: rgba(255, 255, 255,0.7)">
             <div class="content">
               white
             </div>
@@ -748,8 +710,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>White</span></div>
@@ -758,7 +720,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #ddbe00;">
+          <div class="diamond" data-color="#ddbe00" style="background-color: #ddbe00;background-color: rgba(221, 190, 0,0.7);">
             <div class="content">
               Sunflower
             </div>
@@ -771,8 +733,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Sunflower</span></div>
@@ -781,7 +743,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li style="opacity: 0;">
-          <div class="diamond" style="background-color: #ce762f;">
+          <div class="diamond" data-color="#ce762f" style="background-color: #ce762f;">
             <div class="content">
               camel
             </div>
@@ -794,8 +756,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Camel</span></div>
@@ -804,7 +766,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #ce762f;">
+          <div class="diamond" data-color="#ce762f" style="background-color: #ce762f;background-color: rgba(206, 118, 47,.7)">
             <div class="content">
               camel
             </div>            
@@ -817,8 +779,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Camel</span></div>
@@ -827,7 +789,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #d5d500;">
+          <div class="diamond" data-color="#d5d500" style="background-color: #d5d500;background-color: rgba(213, 213, 0,0.7);">
             <div class="content">
               yellow
             </div>
@@ -840,8 +802,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Yellow</span></div>
@@ -850,7 +812,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #ec9f77;">
+          <div class="diamond" data-color="#ec9f77" style="background-color: #ec9f77;background-color: rgba(236, 159, 119,0.7);">
             <div class="content">
               lily
             </div>
@@ -863,8 +825,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Lily</span></div>
@@ -873,7 +835,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #fb7e44;">
+          <div class="diamond" data-color="#fb7e44" style="background-color: #fb7e44;background-color: rgba(251, 126, 68,0.7);">
             <div class="content">
               Terracotta
             </div>
@@ -886,8 +848,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Terracotta</span></div>
@@ -896,7 +858,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #4b0082;">
+          <div class="diamond" data-color="#4b0082" style="background-color: #4b0082;background-color: rgba(75, 0, 130,0.7);">
             <div class="content">
               indigo
             </div>
@@ -909,8 +871,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Indigo</span></div>
@@ -919,7 +881,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #b7894e;">
+          <div class="diamond" data-color="#b7894e" style="background-color: #b2907b;background-color: rgba(178, 144, 123,0.7);">
             <div class="content">
               Chestnut
             </div>
@@ -932,8 +894,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Chestnut</span></div>
@@ -942,7 +904,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #692746;">
+          <div class="diamond" data-color="#692746" style="background-color: #692746;background-color: rgba(105, 39, 70,0.7);">
             <div class="content">
               garnet
             </div>
@@ -955,8 +917,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Garnet</span></div>
@@ -965,7 +927,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li>
-          <div class="diamond" style="background-color: #c18192;">
+          <div class="diamond" data-color="#c18192" style="background-color: #c18192;background-color: rgba(193, 129, 146,0.7);">
             <div class="content">
               Dusk Lily
             </div>
@@ -978,8 +940,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Dusk Lily</span></div>
@@ -988,7 +950,7 @@
           <div class="diamond-overlay"></div>
         </li>
         <li style="position: absolute;top: 66px;left: -25px;margin: 0;">
-          <div class="diamond" style="background-color: #0ecfcf;">
+          <div class="diamond" data-color="#0ecfcf" style="background-color: #0ecfcf;background-color: rgba(14, 207, 207,0.7);">
             <div class="content">
                Sky blue
             </div>
@@ -1001,8 +963,8 @@
                   <button class="btn btn-default text-uppercase">explore</button>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="fb-icon"><img src="img/fb-icon.png"></a>
-                  <a href="#" class="tw-icon"><img src="img/tiwtter.png"></a>
+                  <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                  <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
                 </div>
               </div>
               <div class="color-txt"><span>Sky blue</span></div>
@@ -1011,15 +973,15 @@
           <div class="diamond-overlay"></div>
         </li>
         <!-- <li class="last-li">
-          <div class="diamond">
+          <div class="diamond" data-color="cont66">
             <div class="content">
-              <img src="img/color-shade.png">
+              <img src="<?php echo base_url(); ?>assets/img/color-shade.png">
             </div>
           </div>
         </li> -->        
       </ul>
       <div class="explore-tile">
-        <img src="img/explore-full.png">
+        <img class="img-responsive" src="<?php echo base_url(); ?>assets/img/explore-full.png">
       </div>
       <div class="quiz-wrpr">
         <div class="qusion-wrpr">
@@ -1129,203 +1091,230 @@
             </li>
           </ul>      
             <div class="qust-nav-btn qust-nav-btn-prev">
-              <img class="b" src="img/prev-icon.png">
+              <img class="b" src="<?php echo base_url(); ?>assets/img/prev-icon.png">
             </div>
             <div class="qust-nav-btn qust-nav-btn-next">
-              <img src="img/next-icon.png">
+              <img src="<?php echo base_url(); ?>assets/img/next-icon.png">
               <button class="btn btn-default submit-btn text-uppercase">submit</button>
             </div>
             <div class="no-ofquest text-center">
               Questions <br/> <span class="js-counter">1</span>/5
             </div>
           </div>
-      </div>
+      </div> 
+      <div class="silder-mobile">
+        <div class="owl-carousel">
+            <div class="item">
+              <div class="mob-item-wrpr">
+                <ul class="diamond-grid">    
+                  <li>
+                    <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;">
+                      <div class="content">
+                        Blue
+                      </div>
+                    </div>
+                    <div class="pop-wrpr">
+                      <div class="pop-content">
+                        <p>The colour for sensitive souls who search for peace and harmony. Blue is for people who believe in genuineness and sincerity.</p>
+                        <div class="pop-btn-wrpr clearfix">
+                          <div class="pull-left">
+                            <button class="btn btn-default text-uppercase">explore</button>
+                          </div>
+                          <div class="pull-right">
+                            <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                            <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
+                          </div>
+                        </div>
+                        <div class="color-txt"><span>Blue</span></div>
+                        <div class="popup-close">&times;</div>
+                      </div>
+                    </div>
+                    <div class="diamond-overlay"></div>                    
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;">
+                      <div class="content">
+                        Blood red
+                      </div>
+                    </div>
+                    <div class="pop-wrpr">
+                      <div class="pop-content">
+                        <p>The colour for sensitive souls who search for peace and harmony. Blue is for people who believe in genuineness and sincerity.</p>
+                        <div class="pop-btn-wrpr clearfix">
+                          <div class="pull-left">
+                            <button class="btn btn-default text-uppercase">explore</button>
+                          </div>
+                          <div class="pull-right">
+                            <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                            <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
+                          </div>
+                        </div>
+                        <div class="color-txt"><span>Blood red</span></div>
+                      </div>
+                    </div>
+                    <div class="diamond-overlay"></div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#2da880" style="background-color: #2da880;">
+                      <div class="content">
+                        dark green
+                      </div>
+                    </div>
+                    <div class="pop-wrpr">
+                      <div class="pop-content">
+                        <p>The colour for sensitive souls who search for peace and harmony. Blue is for people who believe in genuineness and sincerity.</p>
+                        <div class="pop-btn-wrpr clearfix">
+                          <div class="pull-left">
+                            <button class="btn btn-default text-uppercase">explore</button>
+                          </div>
+                          <div class="pull-right">
+                            <a href="#" class="fb-icon"><img src="<?php echo base_url(); ?>assets/img/fb-icon.png"></a>
+                            <a href="#" class="tw-icon"><img src="<?php echo base_url(); ?>assets/img/tiwtter.png"></a>
+                          </div>
+                        </div>
+                        <div class="color-txt"><span>dark green</span></div>
+                      </div>
+                    </div>
+                    <div class="diamond-overlay"></div>
+                  </li>
+                </ul>
+              </div>            
+            </div>
+            <div class="item">
+              <div class="mob-item-wrpr">
+                <ul class="diamond-grid">    
+                  <li>
+                    <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;">
+                      <div class="content">
+                        Blue
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;">
+                      <div class="content">
+                        Blood red
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#2da880" style="background-color: #2da880;">
+                      <div class="content">
+                        dark green
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>            
+            </div>        
+            <div class="item">
+              <div class="mob-item-wrpr">
+                <ul class="diamond-grid">    
+                  <li>
+                    <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;">
+                      <div class="content">
+                        Blue
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;">
+                      <div class="content">
+                        Blood red
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#2da880" style="background-color: #2da880;">
+                      <div class="content">
+                        dark green
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>            
+            </div>
+            <div class="item">
+              <div class="mob-item-wrpr">
+                <ul class="diamond-grid">    
+                  <li>
+                    <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;">
+                      <div class="content">
+                        Blue
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;">
+                      <div class="content">
+                        Blood red
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#2da880" style="background-color: #2da880;">
+                      <div class="content">
+                        dark green
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>            
+            </div>
+            <div class="item">
+              <div class="mob-item-wrpr">
+                <ul class="diamond-grid">    
+                  <li>
+                    <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;">
+                      <div class="content">
+                        Blue
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;">
+                      <div class="content">
+                        Blood red
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#2da880" style="background-color: #2da880;">
+                      <div class="content">
+                        dark green
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>            
+            </div>
+            <div class="item">
+              <div class="mob-item-wrpr">
+                <ul class="diamond-grid">    
+                  <li>
+                    <div class="diamond" data-color="#0d71aa" style="background-color: #0d71aa;">
+                      <div class="content">
+                        Blue
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#e92d3f" style="background-color: #e92d3f;">
+                      <div class="content">
+                        Blood red
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="diamond" data-color="#2da880" style="background-color: #2da880;">
+                      <div class="content">
+                        dark green
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>            
+            </div>
+        </div>
+      </div>     
     </section>
-    <div class="silder-mobile">
-      <div class="owl-carousel">
-          <div class="item">
-            <div class="mob-item-wrpr">
-              <ul class="diamond-grid">    
-                <li>
-                  <div class="diamond" style="background-color: #0d71aa;">
-                    <div class="content">
-                      Blue
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #e92d3f;">
-                    <div class="content">
-                      Blood red
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #2da880;">
-                    <div class="content">
-                      dark green
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>            
-          </div>
-          <div class="item">
-            <div class="mob-item-wrpr">
-              <ul class="diamond-grid">    
-                <li>
-                  <div class="diamond" style="background-color: #0d71aa;">
-                    <div class="content">
-                      Blue
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #e92d3f;">
-                    <div class="content">
-                      Blood red
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #2da880;">
-                    <div class="content">
-                      dark green
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>            
-          </div>        
-          <div class="item">
-            <div class="mob-item-wrpr">
-              <ul class="diamond-grid">    
-                <li>
-                  <div class="diamond" style="background-color: #0d71aa;">
-                    <div class="content">
-                      Blue
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #e92d3f;">
-                    <div class="content">
-                      Blood red
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #2da880;">
-                    <div class="content">
-                      dark green
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>            
-          </div>
-          <div class="item">
-            <div class="mob-item-wrpr">
-              <ul class="diamond-grid">    
-                <li>
-                  <div class="diamond" style="background-color: #0d71aa;">
-                    <div class="content">
-                      Blue
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #e92d3f;">
-                    <div class="content">
-                      Blood red
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #2da880;">
-                    <div class="content">
-                      dark green
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>            
-          </div>
-          <div class="item">
-            <div class="mob-item-wrpr">
-              <ul class="diamond-grid">    
-                <li>
-                  <div class="diamond" style="background-color: #0d71aa;">
-                    <div class="content">
-                      Blue
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #e92d3f;">
-                    <div class="content">
-                      Blood red
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #2da880;">
-                    <div class="content">
-                      dark green
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>            
-          </div>
-          <div class="item">
-            <div class="mob-item-wrpr">
-              <ul class="diamond-grid">    
-                <li>
-                  <div class="diamond" style="background-color: #0d71aa;">
-                    <div class="content">
-                      Blue
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #e92d3f;">
-                    <div class="content">
-                      Blood red
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="diamond" style="background-color: #2da880;">
-                    <div class="content">
-                      dark green
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>            
-          </div>
-      </div>
-      <div class="explore-tile">
-        <img src="img/explore-full.png">
-      </div>
-    </div>
-</div>
-<footer class="main-footer">
-      <div class="container-fluid">
-        <img src="img/welspun-logo.png" class="img-responsive center-block">
-      </div>
-</footer>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script type='text/javascript' src="<?php echo base_url(); ?>assets/js/custom.js"></script>
-    <script src="js/custom.js"></script>
-  </body>
-</html>

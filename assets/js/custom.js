@@ -18,16 +18,16 @@ $(document).ready(function(){
 	});
 
 	$(window).click(function(){
-		$('.pop-wrpr').hide();
+		$('.pop-wrpr').fadeOut(400);
 		if(!$('body').hasClass('startQuiz')){
-			$('.diamond-overlay').hide();	
+			$('.diamond-overlay').fadeOut(400);	
 		}
 		
 	});	
 	$('.gsap-demo .diamond').click(function(e){
 		e.stopPropagation();
-		$(this).next('.pop-wrpr').show();
-		$('.diamond-overlay').show();
+		$(this).next('.pop-wrpr').fadeIn(400);
+		$('.diamond-overlay').fadeIn(400);
 	});
 	
 	$('.pop-wrpr').click(function(e){
@@ -38,28 +38,46 @@ $(document).ready(function(){
 		e.preventDefault();
 		e.stopPropagation();
 		$('body').addClass('startQuiz');
-		$('.quiz-wrpr').show();
-		$('.diamond-overlay').show();
+		$('.quiz-wrpr').fadeIn(400);
+		$('.diamond-overlay').fadeIn(400);
 		$('.main-menu li').removeClass('menu-active');
 		$(this).parents('li').addClass('menu-active');
+		if($('body').hasClass('menu-open')){
+			$('body').toggleClass('menu-open');
+			$('.main-menu').toggle();
+			$('.mob-close-btn').toggle();
+			$('.menu-icon').toggle();
+		}
 	});
 	$('#exploreColor').click(function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		$('body').removeClass('startQuiz');
-		$('.quiz-wrpr').hide();
-		$('.diamond-overlay').hide();
+		$('.quiz-wrpr').fadeOut(400);
+		$('.diamond-overlay').fadeOut(400);
 		$('.main-menu li').removeClass('menu-active');
 		$(this).parents('li').addClass('menu-active');
+		if($('body').hasClass('menu-open')){
+			$('body').toggleClass('menu-open');
+			$('.main-menu').toggle();
+			$('.mob-close-btn').toggle();
+			$('.menu-icon').toggle();
+		}
 	});	
 	$('#designSpace').click(function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		$('body').removeClass('startQuiz');
-		$('.quiz-wrpr').hide();
-		$('.diamond-overlay').hide();
+		$('.quiz-wrpr').fadeOut(400);
+		$('.diamond-overlay').fadeOut(400);
 		$('.main-menu li').removeClass('menu-active');
 		$(this).parents('li').addClass('menu-active');
+		if($('body').hasClass('menu-open')){
+			$('body').toggleClass('menu-open');
+			$('.main-menu').toggle();
+			$('.mob-close-btn').toggle();
+			$('.menu-icon').toggle();
+		}
 	});	
 	var count=1;
 	$('.qust-nav-btn-prev').click(function(e){
@@ -81,9 +99,35 @@ $(document).ready(function(){
 		}
 	});	
 	$('.qust-nav-btn-next button').click(function(e){
-		$('.quiz-wrpr').hide();
+		$('.quiz-wrpr').fadeOut(400);
 		$('body').removeClass('startQuiz');
-		$('.diamond-overlay').hide();
+		$('.diamond-overlay').fadeOut(400);
 	});
+
+	$('.main-menu-icon').click(function(){
+		$('body').toggleClass('menu-open');
+		$('.main-menu').toggle();
+		$('.mob-close-btn').toggle();
+		$('.menu-icon').toggle();
+	});
+	function run(interval, frames) {
+	    var int = 1;
+	    
+	    function func() {
+	        document.body.id = "bg"+int;
+	        int++;
+	        if(int === frames) { int = 1; }
+	    }
+	    
+	    var swap = window.setInterval(func, interval);
+	}
+
+	run(5000, 5);
+
+	$('.popup-close').click(function(){
+		$(this).parents('.pop-wrpr').fadeOut(400);
+		$('.diamond-overlay').fadeOut(400);
+	});
+
 	
 });
