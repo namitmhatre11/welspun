@@ -32,4 +32,12 @@ class News_model extends CI_Model {
 
         return $this->db->insert('news', $data);
     }
+
+    public function get_table()
+    {
+        $query = $this->db->query('SELECT * FROM news');
+        /*var_dump($query->result_array());
+        exit;*/
+        return $query->result_array();
+    }
 }

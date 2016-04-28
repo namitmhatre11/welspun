@@ -3,19 +3,19 @@ class News extends CI_Controller {
 
         public function __construct()
         {
-                parent::__construct();
-                $this->load->model('news_model');
-                $this->load->helper('url_helper');
+            parent::__construct();
+            $this->load->model('news_model');
+            $this->load->helper('url_helper');
         }
 
         public function index()
         {
-                $data['news'] = $this->news_model->get_news();
-                $data['title'] = 'News archive';
+            $data['news'] = $this->news_model->get_news();
+            $data['title'] = 'News archive';
 
-                $this->load->view('templates/header', $data);
-                $this->load->view('news/index', $data);
-                $this->load->view('templates/footer');
+            $this->load->view('templates/header', $data);
+            $this->load->view('news/index', $data);
+            $this->load->view('templates/footer');
         }
 
         public function view($slug = NULL)
@@ -56,5 +56,16 @@ class News extends CI_Controller {
                 $this->news_model->set_news();
                 $this->load->view('news/success');
             }
+        }
+
+        public function show_table()
+        {
+            $this->load->library('table');
+
+            $data['news'] = $this->news_model->get_table();
+            /*echo 'hi';
+            var_dump($data);exit;*/
+
+            $this->load->view('news/show_table', $data);
         }
 }
