@@ -1,9 +1,18 @@
-<?php if(!empty($error)){?>
-<div>
-	<?php echo $error;?> 
-</div>
-<?php }?>
 <div class="container">
+
+<?php if(!empty($error)){?>
+	<div>
+		<?php
+			echo $error;
+		?> 
+	</div>
+<?php }elseif (!empty($notice)) {?>
+	<div>
+		<?php
+			echo $notice;
+		?> 
+	</div>
+<?php }?>
 
   <form class="form-signin" method="post" action="<?php echo site_url('admin/login'); ?>">
     <h2 class="form-signin-heading">Please sign in</h2>

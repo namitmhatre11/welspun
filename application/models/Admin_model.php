@@ -35,4 +35,17 @@ class Admin_model extends CI_Model {
         exit;*/
         return $query->result_array();
     }
+
+    public function addplayer($upload_data)
+    {
+        $this->load->helper('url');
+        $data = array(
+            'name' => $this->input->post('playername'),
+            'profile_photo' => $upload_data['upload_data']['file_name']
+            //'slug' => $slug,
+            //'text' => $this->input->post('text')
+        );
+
+        return $this->db->insert('players', $data);
+    }
 }
