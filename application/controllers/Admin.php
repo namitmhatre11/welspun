@@ -113,4 +113,37 @@
 				}
             }
         }
+
+        public function delete_player($slug = NULL)
+        {
+        	//echo $slug; exit;
+
+        	$delete_response = $this->admin_model->deleteplayer($slug);
+        	echo $delete_response;
+        	var_dump($delete_response);
+        	redirect('/admin/dashbord');
+        }
+
+        public function edit_player($player_id = NULL)
+        {
+        	$data['title'] = 'Edit Player';
+        	$config['upload_path'] = './uploads/';
+	        $config['allowed_types'] = 'gif|jpg|png';
+	        $config['max_size'] = '100';
+	        $config['max_width']  = '1024';
+	        $config['max_height']  = '768';
+
+        	$this->load->helper('form');
+            $this->load->library('form_validation');
+        	$this->load->library('upload', $config);
+
+	        $data['player'] = $this->admin_model->get_players($player_id);
+	        //print_r($data['players']);exit;
+
+            $this->load->view('templates/admin_header', $data);
+            $this->load->view('templates/admin_nav');
+    		$this->load->view('admin/addplayer', $data);
+    		$this->load->view('templates/nav_close');
+        	$this->load->view('templates/admin_footer');
+        }
 	}

@@ -13,18 +13,20 @@ class Admin_model extends CI_Model {
         $username = $this->input->post('userEmail');
         $userpass = $this->input->post('userPass');
 
-        $query = $this->db->get_where('adminuser', array('user_email' => $username, 'user_pass' => md5($userpass)));
+        $query = $this->db->get_where('garvhai_adminuser', array('user_email' => $username, 'user_pass' => md5($userpass)));
         return $query->row_array();
 	}
 
-    public function get_players()
+    public function get_players($slug = FALSE)
     {
-        $this->load->helper('url');
-
-        $this->db->select('id, name');
-        $query = $this->db->get('players');
-
-        return $query->result_array();
+        if ($slug === FALSE)
+        {
+            $this->db->select('id, name');
+            $query = $this->db->get('garvhai_players');
+            return $query->result_array();
+        }
+        $query = $this->db->get_where('garvhai_players', array('id' => $slug));
+        return $query->row_array();
     }
 
 
@@ -41,11 +43,18 @@ class Admin_model extends CI_Model {
         $this->load->helper('url');
         $data = array(
             'name' => $this->input->post('playername'),
-            'profile_photo' => $upload_data['upload_data']['file_name']
+            'profile_photo' => $upload_data['upload_data']['file_name'],
+            'contest' => $this->input->post('contest'),
+            'championship' => $this->input->post('championship')
             //'slug' => $slug,
             //'text' => $this->input->post('text')
         );
 
-        return $this->db->insert('players', $data);
+        return $this->db->insert('garvhai_players', $data);
+    }
+
+    public function deleteplayer($player_id)
+    {
+        return $this->db->delete('garvhai_players', array('id' => $player_id)); 
     }
 }
