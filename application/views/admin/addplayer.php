@@ -1,4 +1,4 @@
-<h2><?php echo $title;?></h2>
+<h2><?php if(isset($title)) echo $title;?></h2>
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
@@ -12,7 +12,8 @@
             <h3 class="panel-title">Add New Player</h3>
         </div>
         <div class="panel-body">
-            <?php echo form_open_multipart('admin/add_player'); ?>
+            <?php $action_url = isset($player) ? 'admin/update_player/'.$player['id'] : 'admin/add_player';?>
+            <?php echo form_open_multipart($action_url); ?>
 
                 <label for="playername">Name</label>
                 <input type="input" name="playername" value="<?php if(isset($player)) echo $player['name'];?>" />
@@ -24,14 +25,15 @@
                 <hr />
 
                 <label for="contest">Contest</label>
-                <textarea name="contest" rows="10" cols="80"></textarea>
+                <textarea name="contest" rows="10" cols="80"><?php if(isset($player)) echo $player['contest'];?></textarea>
                 <hr />
 
                 <label for="championship">Upcoming Championship</label>
-                <textarea name="championship" rows="10" cols="80"></textarea>
+                <textarea name="championship" rows="10" cols="80"><?php if(isset($player)) echo $player['championship'];?></textarea>
                 <hr />
 
-                <input type="submit" name="submit" value="Create New Player" />
+                <?php $buttom_txt = isset($player) ? 'Update Player' : 'Create New Player';?>
+                <input type="submit" name="submit" value="<?php  echo $buttom_txt;?>" />
 
                 <script>
                     // Replace the <textarea id="editor1"> with a CKEditor

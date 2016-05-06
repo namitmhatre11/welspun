@@ -98,8 +98,13 @@
             else
             {
             	if( ! $this->upload->do_upload('userpic')){
-            		$error = array('error' => $this->upload->display_errors());
-            		$this->load->view('admin/addplayer', $error);
+            		$data['error'] = $this->upload->display_errors();
+            		//print_r($error); exit;
+					$this->load->view('templates/admin_header');
+	            	$this->load->view('templates/admin_nav');
+            		$this->load->view('admin/addplayer', $data);
+		    		$this->load->view('templates/nav_close');
+	                $this->load->view('templates/admin_footer');
             	}else
 				{
 					$data['upload_data'] = $this->upload->data();
@@ -116,11 +121,7 @@
 
         public function delete_player($slug = NULL)
         {
-        	//echo $slug; exit;
-
         	$delete_response = $this->admin_model->deleteplayer($slug);
-        	echo $delete_response;
-        	var_dump($delete_response);
         	redirect('/admin/dashbord');
         }
 
@@ -138,12 +139,39 @@
         	$this->load->library('upload', $config);
 
 	        $data['player'] = $this->admin_model->get_players($player_id);
-	        //print_r($data['players']);exit;
 
             $this->load->view('templates/admin_header', $data);
             $this->load->view('templates/admin_nav');
     		$this->load->view('admin/addplayer', $data);
     		$this->load->view('templates/nav_close');
         	$this->load->view('templates/admin_footer');
+        }
+
+        public function update_player($player_id){
+        	$data['title'] = 'Edit Player';
+        	$config['upload_path'] = './uploads/';
+	        $config['allowed_types'] = 'gif|jpg|png';
+	        $config['max_size'] = '100';
+	        $config['max_width']  = '1024';
+	        $config['max_height']  = '768';
+
+        	$this->load->helper('form');
+            $this->load->library('form_validation');
+        	$this->load->library('upload', $config);
+
+	        $this->form_validation->set_rules('playername', 'Player name', 'required');
+
+	        if ($this->form_validation->run() === FALSE)
+            {
+            	redirect('admin/edit_player/'.$player_id);
+            }
+
+//var_dump($this->upload->do_upload('userpic'));exit;
+            /*else if( ! $this->upload->do_upload('userpic')){
+            	redirect('admin/edit_player/'.$player_id);
+            }*/else{
+            	$data['upload_data'] = $this->upload->data();
+				$this->admin_model->updateplayer($data);
+            }
         }
 	}

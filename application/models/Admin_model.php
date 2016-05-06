@@ -57,4 +57,21 @@ class Admin_model extends CI_Model {
     {
         return $this->db->delete('garvhai_players', array('id' => $player_id)); 
     }
+
+    public function updateplayer($update_data){
+        $this->load->helper('url');
+
+        $data = array(
+            'name' => $this->input->post('playername'),
+            'contest' => $this->input->post('contest'),
+            'championship' => $this->input->post('championship')
+        );
+        if(isset($upload_data['upload_data']['file_name'])){
+            $data['profile_photo'] = $upload_data['upload_data']['file_name'];
+        }
+
+        
+
+        print_r($update_data);exit;
+    }
 }
