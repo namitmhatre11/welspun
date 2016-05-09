@@ -5,7 +5,8 @@
 <?php echo validation_errors(); ?>
 <?php 
     if(isset($error)) echo $error; 
-    else if(isset($notice)) echo $notice; ?>
+    else if(isset($notice)) echo $notice;
+    else if (isset($upload_error)) echo $upload_error; ?>
 
     <div class="panel panel-primary">
         <div class="panel-heading">

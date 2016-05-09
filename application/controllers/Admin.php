@@ -125,9 +125,10 @@
         	redirect('/admin/dashbord');
         }
 
-        public function edit_player($player_id = NULL)
+        public function edit_player($player_id = NULL, $upload_error = NULL)
         {
         	$data['title'] = 'Edit Player';
+        	$data['upload_error'] = urldecode($upload_error);
         	$config['upload_path'] = './uploads/';
 	        $config['allowed_types'] = 'gif|jpg|png';
 	        $config['max_size'] = '100';
@@ -165,13 +166,26 @@
             {
             	redirect('admin/edit_player/'.$player_id);
             }
-
-//var_dump($this->upload->do_upload('userpic'));exit;
-            /*else if( ! $this->upload->do_upload('userpic')){
-            	redirect('admin/edit_player/'.$player_id);
-            }*/else{
+            else if( ! $this->upload->do_upload('userpic')){
+            	$uploadError = $this->upload->display_errors();
+            	if (strip_tags($uploadError) != 'You did not select a file to upload.'){
+            		redirect('admin/edit_player/'.$player_id.'/'.strip_tags($uploadError));
+            	}else{
+	            	$data['upload_data'] = $this->upload->data();
+	            	$data['player_id'] = $player_id;
+					$update_response = $this->admin_model->updateplayer($data);
+					if($update_response){
+						redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+					}
+	            }
+            }else{
             	$data['upload_data'] = $this->upload->data();
-				$this->admin_model->updateplayer($data);
+            	$data['player_id'] = $player_id;
+				$update_response = $this->admin_model->updateplayer($data);
+				//var_dump($update_response);
+				if($update_response){
+					redirect('admin/edit_player/'.$player_id.'/'.strip_tags("User profile updated successfully"));
+				}
             }
         }
 	}

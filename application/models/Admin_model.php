@@ -66,12 +66,12 @@ class Admin_model extends CI_Model {
             'contest' => $this->input->post('contest'),
             'championship' => $this->input->post('championship')
         );
-        if(isset($upload_data['upload_data']['file_name'])){
-            $data['profile_photo'] = $upload_data['upload_data']['file_name'];
+        if(isset($update_data['upload_data']['file_name']) && $update_data['upload_data']['file_name'] != ''){
+            $data['profile_photo'] = $update_data['upload_data']['file_name'];
         }
 
-        
-
-        print_r($update_data);exit;
+        $this->db->where('id', $update_data['player_id']);
+        return $this->db->update('garvhai_players', $data); 
+        //print_r($update_data['player_id']);exit;
     }
 }
