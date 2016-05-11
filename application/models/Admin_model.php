@@ -1,5 +1,6 @@
 <?php
 class Admin_model extends CI_Model {
+    private $_result;
 
     public function __construct()
     {
@@ -73,5 +74,45 @@ class Admin_model extends CI_Model {
         $this->db->where('id', $update_data['player_id']);
         return $this->db->update('garvhai_players', $data); 
         //print_r($update_data['player_id']);exit;
+    }
+
+    public function addplayermedia($upload_data, $player_id)
+    {
+        /*foreach ($this->input->post() as $key => $value) {
+            echo $key .'=>'. $value;
+        }
+        echo $player_id;exit;*/
+        $this->load->helper('url');
+        foreach ($upload_data as $player_image) {
+            $data = array(
+                'player_id' => $player_id,
+                'type' => 'image',
+                'media_value' => $player_image['file_name']
+                //'slug' => $slug,
+                //'text' => $this->input->post('text')
+            );
+            $_result[] = $this->db->insert('garvhai_players_media', $data);
+            if(!current($_result))
+                return $this->$db->_error_message();
+        }
+
+        foreach ($this->input->post() as $media => $value) {
+            //echo $media .'=>'. $value;
+            $type = strpos($media, 'video') ? 'video' : 'social';
+
+            if($media != 'submit'){
+                $data = array(
+                    'player_id' => $player_id,
+                    'type' => $type,
+                    'media_value' => $value
+                    //'slug' => $slug,
+                    //'text' => $this->input->post('text')
+                );
+                $_result[] = $this->db->insert('garvhai_players_media', $data);
+                if(!current($_result))
+                    return $this->$db->_error_message();
+            }
+        }
+        return $_result;
     }
 }

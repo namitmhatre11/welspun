@@ -1,5 +1,7 @@
 <?php
 	class Admin extends CI_Controller {
+		private $_uploaded;
+
 		function __construct()
         {
             parent::__construct();
@@ -188,4 +190,107 @@
 				}
             }
         }
+
+        public function add_media($player_id)
+        {
+        	$data['title'] = 'Add media for player';
+        	$config['upload_path'] = './uploads/';
+	        $config['allowed_types'] = 'gif|jpg|png';
+	        $config['max_size'] = '100';
+	        $config['max_width']  = '1024';
+	        $config['max_height']  = '768';
+
+	        $this->load->helper('form');
+            $this->load->library('form_validation');
+        	$this->load->library('upload', $config);
+
+        	//now we set a callback as rule for the upload field
+    		$this->form_validation->set_rules('uploadedimages[]','Upload image','callback_fileupload_check');
+
+			if($this->input->post())
+			{
+			    //run the validation
+				if($this->form_validation->run())
+				{
+					/*// for now let's just verify if all went ok with the upload...
+					echo '<pre>';
+					print_r($this->_uploaded);
+					echo '</pre>';
+					// from here on you can do whatever you wish with the uploaded data or the other form fields that you might have. I decided to exit here, since this is not the object of our tutorial.
+					exit;*/
+					$add_media_response = $this->admin_model->addplayermedia($this->_uploaded, $player_id);
+					var_dump($add_media_response);
+					foreach ($add_media_response as $value) {
+						if($value != true)
+							$this->form_validation->set_message('playervideo', $value);
+					}
+					$this->form_validation->set_message('playervideo', 'Player data Added sccessfully');
+					
+					$this->load->view('templates/admin_header', $data);
+		            $this->load->view('templates/admin_nav');
+		        	$this->load->view('admin/addmedia',$data);
+		    		$this->load->view('templates/nav_close');
+		        	$this->load->view('templates/admin_footer');
+				}
+			}
+			else
+			{
+				$this->load->view('templates/admin_header', $data);
+	            $this->load->view('templates/admin_nav');
+	        	$this->load->view('admin/addmedia',$data);
+	    		$this->load->view('templates/nav_close');
+	        	$this->load->view('templates/admin_footer');
+			}	
+        }
+
+        // now the callback validation that deals with the upload of files
+		public function fileupload_check()
+		{
+			// we retrieve the number of files that were uploaded
+			$number_of_files = sizeof($_FILES['uploadedimages']['tmp_name']);
+
+			// considering that do_upload() accepts single files, we will have to do a small hack so that we can upload multiple files. For this we will have to keep the data of uploaded files in a variable, and redo the $_FILE.
+			$files = $_FILES['uploadedimages'];
+
+			// first make sure that there is no error in uploading the files
+			for($i=0;$i<$number_of_files;$i++)
+			{
+				if($_FILES['uploadedimages']['error'][$i] != 0)
+				{
+					// save the error message and return false, the validation of uploaded files failed
+					$this->form_validation->set_message('fileupload_check', 'Couldn\'t upload the file(s)');
+					return FALSE;
+				}
+			}
+
+			/*// we first load the upload library
+			$this->load->library('upload');
+			// next we pass the upload path for the images
+			$config['upload_path'] = FCPATH . 'upload/';
+			// also, we make sure we allow only certain type of images
+			$config['allowed_types'] = 'gif|jpg|png';*/
+
+			// now, taking into account that there can be more than one file, for each file we will have to do the upload
+			for ($i = 0; $i < $number_of_files; $i++)
+			{
+				$_FILES['uploadedimage']['name'] = $files['name'][$i];
+				$_FILES['uploadedimage']['type'] = $files['type'][$i];
+				$_FILES['uploadedimage']['tmp_name'] = $files['tmp_name'][$i];
+				$_FILES['uploadedimage']['error'] = $files['error'][$i];
+				$_FILES['uploadedimage']['size'] = $files['size'][$i];
+
+				/*//now we initialize the upload library
+				$this->upload->initialize($config);*/
+				if ($this->upload->do_upload('uploadedimage'))
+				{
+					$this->_uploaded[$i] = $this->upload->data();
+				}
+				else
+				{
+					$this->form_validation->set_message('fileupload_check', $this->upload->display_errors());
+					return FALSE;
+				}
+			}
+			return TRUE;
+		}
 	}
