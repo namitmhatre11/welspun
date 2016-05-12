@@ -10,7 +10,8 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">Add New Player</h3>
+        <?php $panel_title = isset($player) ? 'Update Player' : 'Add New Player'; ?>
+            <h3 class="panel-title"><?php echo $panel_title; ?></h3>
         </div>
         <div class="panel-body">
             <?php $action_url = isset($player) ? 'admin/update_player/'.$player['id'] : 'admin/add_player';?>

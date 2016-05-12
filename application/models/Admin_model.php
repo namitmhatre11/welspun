@@ -59,6 +59,11 @@ class Admin_model extends CI_Model {
         return $this->db->delete('garvhai_players', array('id' => $player_id)); 
     }
 
+    public function deletemedia($media_id)
+    {
+        return $this->db->delete('garvhai_players_media', array('id' => $media_id)); 
+    }
+
     public function updateplayer($update_data){
         $this->load->helper('url');
 
@@ -115,4 +120,86 @@ class Admin_model extends CI_Model {
         }
         return $_result;
     }
+
+    public function addplayerimages($upload_data, $player_id)
+    {
+        //print_r($upload_data);exit;
+        $this->load->helper('url');
+        foreach ($upload_data as $player_image) {
+            $data = array(
+                'player_id' => $player_id,
+                'type' => 'image',
+                'media_value' => $player_image['file_name']
+                //'slug' => $slug,
+                //'text' => $this->input->post('text')
+            );
+            
+            $_result[] = $this->db->insert('garvhai_players_media', $data);
+            if(!current($_result))
+                return $this->$db->_error_message();
+        }
+        return $_result;
+    }
+
+    public function get_player_images($player_id)
+    {
+        //$this->db->group_by('type');
+        $query = $this->db->get_where('garvhai_players_media', array('player_id' => $player_id, 'type' => 'image'));
+        $data['images'] = $query->result_array();
+
+        return $data;
+    }
+
+    public function addvideo($upload_data)
+    {
+        //print_r($upload_data);exit;
+        $this->load->helper('url');
+        $data = array(
+            'player_id' => $upload_data['player_id'],
+            'media_value' => $this->input->post('playervideo'),
+            'video_thumbnail' => $upload_data['upload_data']['file_name'],
+            'video_title' => $this->input->post('videotitle'),
+            'type' => 'video'
+            //'slug' => $slug,
+            //'text' => $this->input->post('text')
+        );
+
+        //print_r($data);exit;
+        return $this->db->insert('garvhai_players_media', $data);
+    }
+
+    public function get_player_videos($player_id)
+    {
+        $query = $this->db->get_where('garvhai_players_media', array('player_id' => $player_id, 'type' => 'video'));
+        $data['videos'] = $query->result_array();
+
+        return $data;
+    }
+
+    public function addsocial($player_id)
+    {
+        $this->load->helper('url');
+        $data = array(
+            'player_id' => $player_id,
+            'media_value' => $this->input->post('newstitle'),
+            'link' => $this->input->post('newslink'),
+            'description' => $this->input->post('newsdesc'),
+            'published_date' => date('Y-m-d', strtotime($this->input->post('newsdate'))),
+            'type' => 'social'
+            //'slug' => $slug,
+            //'text' => $this->input->post('text')
+        );
+        //print_r($data); exit();
+        return $this->db->insert('garvhai_players_media', $data);
+    }
+
+    public function get_player_social($player_id)
+    {
+
+        $query = $this->db->get_where('garvhai_players_media', array('player_id' => $player_id, 'type' => 'social'));
+        $data['social'] = $query->result_array();
+
+        return $data;
+    }
+
 }

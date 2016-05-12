@@ -19,9 +19,9 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-right">
+        <!-- <form class="navbar-form navbar-right">
           <input type="text" class="form-control" placeholder="Search...">
-        </form>
+        </form> -->
       </div>
     </div>
   </nav>
@@ -30,9 +30,7 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active"><a href="<?php echo site_url('admin/add_player')?>">Add New Player <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Reports</a></li>
-          <li><a href="#">Analytics</a></li>
-          <li><a href="#">Export</a></li>
+          <li class="active"><a href="<?php echo site_url('admin/dashbord')?>">Player List</a></li>
+          <li><a href="<?php echo site_url('admin/add_player')?>">Add New Player <span class="sr-only">(current)</span></a></li>
         </ul>
       </div>
