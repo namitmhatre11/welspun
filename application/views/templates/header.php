@@ -1,49 +1,71 @@
-<!-- <html>
-        <head>
-                <title>CodeIgniter Tutorial</title>
-        </head>
-        <body>
-
-                <h1><?php echo $title; ?></h1> -->
-
-
-
-<html lang="en" data-slide="1">
+<?php //echo base_url(); ?>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Space</title>
+    <title>Garvhai</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="<?php echo base_url(); ?>assets/js/jquery-1.9.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
   </head>
   <body>
-  <div class="main-wrpr"> 
-    <header>
-      <div class="conatiner-fluid">
-        <div class="logo-wrpr clearfix">
-          <a href="#" class="logo-wrpr-top"><img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-responsive center-block"></a>          
-          <a href="#" class="main-menu-icon"><img src="<?php echo base_url(); ?>assets/img/menu-btn.png" class="menu-icon"><img src="<?php echo base_url(); ?>assets/img/mob-close-btn.png" class="mob-close-btn"></a>
-          <a href="#" class="cart-icon"><img src="<?php echo base_url(); ?>assets/img/cart-icon.png"></a>
+    <header class="main-header">
+      <section class="top-header-wrpr clearfix">
+        <div class="pull-left">
+          <a href="#">
+            <img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-responsive">
+          </a>
         </div>
-        <nav class="main-menu">
-          <ul class="list-inline text-center">
-            <li><a href="#" id="startQuiz">start quiz</a></li>
-            <li class="menu-active"><a href="#" id="exploreColor">Explore colours </a></li>
-            <li><a href="#" id="designSpace">design your space</a></li>
+        <div class="pull-right">
+          <ul class="list-inline">
+            <li class="vid-img-links"><a href="#" class="text-uppercase upper-links">Videos & images</a></li>
+            <li><a href="#" class="text-uppercase upper-links">Media</a></li>
+            <li class="tw-top-links"><a href="#" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/fb-w.png"></a></li>
+            <li><a href="#" class="social-icon-top"><img src="<?php echo base_url(); ?>assets/img/tw-w.png"></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="bottom-header-wrpr clearfix">
+        <div class="menu-btn pull-left"><img src="<?php echo base_url(); ?>assets/img/menu-btn.png"></div>
+        <ul class="list-inline pull-right mob-menu-list">
+          <li><div class="search-btn"><img src="<?php echo base_url(); ?>assets/img/search-icon.png"></div></li>
+          <li class="text-uppercase vid-img-links-mob"><a href="#">videos &amp; images</a></li>
+          <li class="text-uppercase"><a href="#">media</a></li>
+          <li><a href="#"><img src="<?php echo base_url(); ?>assets/img/adani.png"></a></li>
+        </ul>
+        <nav class="main-nav">
+          <ul class="nav navbar-nav">
+            <li class="logo-li"><a href="#">
+            <img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-responsive">
+          </a></li>
+            <li ><a href="#" class="text-uppercase">players</a></li>
+            <li><a href="#" class="text-uppercase">upcoming talent</a></li>
+            <li><a href="#" class="text-uppercase">about</a></li>
+            <li><a href="#" class="text-uppercase">contact</a></li>
+            <li class="hidden-small search-wrpr-h">
+              <form class="top-search-form">
+                <input type="text" class="search-inpt" placeholder="Search...">
+                <button class="search-btn"><img src="<?php echo base_url(); ?>assets/img/search-icon.png"></button>
+                <label class="animate-label"></label>
+              </form>
+            </li>
+            <li class="hidden-small">
+              <a href="#"><img src="<?php echo base_url(); ?>assets/img/adani.png"></a>
+            </li>           
           </ul>
         </nav>
-      </div>
+      </section>
     </header>
